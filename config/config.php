@@ -19,17 +19,17 @@
  * Добавляем необходимые параметры в конфиг jevixы
  */
 $acfgAllowTagParams = Config::Get('jevix.default.cfgAllowTagParams');
-foreach($acfgAllowTagParams as $sKey => $aItem){
-	if($aItem[0] == 'a'){
-		$acfgAllowTagParams[$sKey][1] = array_merge(
-			$aItem[1],
-			array('target' => array('_blank'), 'class'=> array('clickable_img'))
-		);
-	}
+foreach ($acfgAllowTagParams as $sKey => $aItem) {
+    if ($aItem[0] == 'a') {
+        $acfgAllowTagParams[$sKey][1] = array_merge(
+            $aItem[1],
+            array('target' => array('_blank'), 'class' => array('clickable_img'))
+        );
+    }
 }
-Config::Set('jevix.default.cfgAllowTagParams',$acfgAllowTagParams);
+Config::Set('jevix.default.cfgAllowTagParams', $acfgAllowTagParams);
 
-$config=array();
+$config = array();
 
 $config['topic_preview_width'] = 600;
 $config['comment_preview_width'] = 100;
@@ -37,4 +37,3 @@ $config['comment_preview_width'] = 100;
 $config['topic_preview_enable'] = true;
 $config['comment_preview_enable'] = false;
 return $config;
-?>
